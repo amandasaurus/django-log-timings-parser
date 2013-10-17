@@ -43,6 +43,8 @@ It will recursively try to parse all the files in ``/var/log/apache2/``, optiona
 
 ### Custom log format
 
+You will have to specify the [Apache log format](http://httpd.apache.org/docs/2.2/mod/mod_log_config.html) that you use. Your format should include ``%D``, for the "The time taken to serve the request, in microseconds".
+
 
 
 ## TODO
