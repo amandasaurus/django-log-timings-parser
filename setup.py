@@ -4,7 +4,7 @@ from setuptools import setup, find_packages
 
 
 setup(name="django-log-timings-parser",
-      version="0.1",
+      version="1.0.0",
       author="Rory McCann",
       author_email="rory@technomancy.org",
       packages=['log_timings_parser'],
