@@ -68,6 +68,13 @@ def parse_url_and_time(base, format):
 
                 yield results
 
+def overrride_settings(extra_settings):
+    # Manually change settings values for this run. Usually you want it to
+    # match what's on the server whose logs you are parsing.
+    for key, value in extra_settings:
+        setattr(settings, key, value)
+
+
 class Command(BaseCommand):
     option_list  = BaseCommand.option_list + (
         make_option( '-i', '--input-source', action='append', default=[], help="Input source (file or directory)" ),
@@ -173,7 +180,7 @@ class Command(BaseCommand):
             function_to_open = open
 
         self.patch_out_decorators(options['patch_out'])
-        self.overrride_settings(options['setting'])
+        overrride_settings(options['setting'])
 
         with function_to_open(output_file, 'w') as results:
             # generator
@@ -205,12 +212,6 @@ class Command(BaseCommand):
             patch = mock.patch(decorator_to_patch_out, new=_passthrough)
             patch.start()
             self.patchers.append(patch)
-
-    def overrride_settings(extra_settings):
-        # Manually change settings values for this run. Usually you want it to
-        # match what's on the server whose logs you are parsing.
-        for key, value in extra_settings:
-            setattr(settings, key, value)
 
 
 
