@@ -58,3 +58,7 @@ confirm that this works with other servers.
 The version numbers follow [Semantic Versioning](http://semver.org/). This
 package is © 2013 Rory McCann, released under the terms of the GNU GPL v3 (or
 at your option a later version).
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/rory/django-log-timings-parser/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
